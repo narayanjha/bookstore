@@ -1,0 +1,50 @@
+[
+    {
+        "id":1,
+        "name":"Book one",
+        "title":"Story book",
+        "price":0,
+        "category":"Free",
+        "image":"https://img.freepik.com/free-vector/gradient-world-book-day-illustration_23-2149300585.jpg?t=st=1745460128~exp=1745463728~hmac=45f22e96f63ad2ac6509194c0aa418193f1a4198078ddb2f240a433e670e7820&w=740"
+    },
+    {
+        "id":2,
+        "name":"Book two",
+        "title":"Story book",
+        "price":0,
+        "category":"Free",
+        "image":"https://img.freepik.com/free-vector/gradient-world-book-day-illustration_23-2149300585.jpg?t=st=1745460128~exp=1745463728~hmac=45f22e96f63ad2ac6509194c0aa418193f1a4198078ddb2f240a433e670e7820&w=740"
+    },
+    {
+        "id":3,
+        "name":"Book three",
+        "title":"Story book",
+        "price":0,
+        "category":"Free",
+        "image":"https://img.freepik.com/free-vector/gradient-world-book-day-illustration_23-2149300585.jpg?t=st=1745460128~exp=1745463728~hmac=45f22e96f63ad2ac6509194c0aa418193f1a4198078ddb2f240a433e670e7820&w=740"
+    },
+    {
+        "id":4,
+        "name":"Book four",
+        "title":"Story book",
+        "price":0,
+        "category":"Free",
+        "image":"https://img.freepik.com/free-vector/gradient-world-book-day-illustration_23-2149300585.jpg?t=st=1745460128~exp=1745463728~hmac=45f22e96f63ad2ac6509194c0aa418193f1a4198078ddb2f240a433e670e7820&w=740"
+    },
+    {
+        "id":5,
+        "name":"Book five",
+        "title":"Story book",
+        "price":100,
+        "category":"Paid",
+        "image":"https://img.freepik.com/free-vector/gradient-world-book-day-illustration_23-2149300585.jpg?t=st=1745460128~exp=1745463728~hmac=45f22e96f63ad2ac6509194c0aa418193f1a4198078ddb2f240a433e670e7820&w=740"
+    },
+    {
+        "id":6,
+        "name":"Book six",
+        "title":"Story book",
+        "price":350,
+        "category":"Paid",
+        "image":"https://img.freepik.com/free-vector/gradient-world-book-day-illustration_23-2149300585.jpg?t=st=1745460128~exp=1745463728~hmac=45f22e96f63ad2ac6509194c0aa418193f1a4198078ddb2f240a433e670e7820&w=740"
+    }
+]
