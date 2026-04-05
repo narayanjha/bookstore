@@ -12,6 +12,8 @@
     "moduleResolution": "node16",
     "target": "es2022",
     "esModuleInterop": true,
+    "allowImportingTsExtensions": true,
+    "rewriteRelativeImportExtensions": true,
     "types": ["node"],
     // For nodejs:
     "lib": ["es2022"],
