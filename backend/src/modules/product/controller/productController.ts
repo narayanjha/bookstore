@@ -12,6 +12,7 @@ declare global {
 const service = new ProductService();
 
 export const createProduct = async (req: Request, res: Response) => {
+    console.log("Creating product with data:", req.body, "for user:", req.user); // Debug log
   const product = await service.createProduct(req.body, req.user!.id);
   console.log("Created product:", product); // Debug log
   res.json(product);
