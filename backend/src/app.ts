@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import authRoutes from "./routes/authRoute.ts";
+import authRoutes from "./modules/auth/routes/authRoute.ts";
 import productRoutes from "./modules/product/route/productRoute.ts";
 
 const app = express();
