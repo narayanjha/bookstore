@@ -8,6 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use("/assets/images", express.static("public/assets/images"));
 
 app.use("/api/auth", authRoutes);
 app.use("/api/product", productRoutes);
