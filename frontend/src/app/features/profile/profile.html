@@ -1,0 +1,83 @@
+<div class="profile-page">
+
+  <p-card header="My Profile">
+
+    <div class="profile-header">
+
+      <img
+        src="https://i.pravatar.cc/150"
+        alt="profile"
+        class="profile-image">
+
+      <h2>{{user?.name}}</h2>
+
+      <p>{{user?.email}}</p>
+
+    </div>
+
+    <form
+      [formGroup]="form"
+      (ngSubmit)="updateProfile()">
+
+      <!-- NAME -->
+      <div class="field mb-3">
+
+        <label>Name</label>
+
+        <input
+          pInputText
+          formControlName="name"
+          class="w-full">
+
+      </div>
+
+      <!-- EMAIL -->
+      <div class="field mb-3">
+
+        <label>Email</label>
+
+        <input
+          pInputText
+          formControlName="email"
+          class="w-full">
+
+      </div>
+
+      <!-- MOBILE -->
+      <div class="field mb-3">
+
+        <label>Mobile</label>
+
+        <input
+          pInputText
+          formControlName="mobile"
+          class="w-full">
+
+      </div>
+
+      <!-- ADDRESS -->
+      <div class="field mb-3">
+
+        <label>Address</label>
+
+        <textarea
+          pInputTextarea
+          rows="4"
+          formControlName="address"
+          class="w-full">
+        </textarea>
+
+      </div>
+
+      <button
+        pButton
+        type="submit"
+        label="Update Profile"
+        [loading]="loading">
+      </button>
+
+    </form>
+
+  </p-card>
+
+</div>

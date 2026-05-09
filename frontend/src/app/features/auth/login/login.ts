@@ -18,7 +18,7 @@ import { PrimengModule } from '../../../shared/primeng/primeng-module';
   styleUrl: './login.scss',
 })
 export class Login {
-    fb = inject(FormBuilder);
+  fb = inject(FormBuilder);
 
   router = inject(Router);
 
@@ -87,9 +87,7 @@ export class Login {
         },
 
         error: (err) => {
-
           this.loading = false;
-
           this.messageService.add({
             severity: 'error',
             summary: 'Login Failed',

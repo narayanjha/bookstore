@@ -10,7 +10,7 @@ export class ApiService {
 
   baseUrl = 'http://localhost:5000/api';
 
-  login(data:any) {
+  login(data: any) {
     return this.http.post(
       `${this.baseUrl}/auth/login`,
       data
@@ -31,9 +31,27 @@ export class ApiService {
     );
   }
 
-  addToCart(data:any) {
+  addToCart(data: any) {
     return this.http.post(
       `${this.baseUrl}/cart/add`,
+      data
+    );
+  }
+
+  // GET PROFILE
+  getProfile(userId: string) {
+    return this.http.get(
+      `${this.baseUrl}/users/${userId}`
+    );
+  }
+
+  // UPDATE PROFILE
+  updateProfile(
+    userId: string,
+    data: any
+  ) {
+    return this.http.put(
+      `${this.baseUrl}/users/${userId}`,
       data
     );
   }

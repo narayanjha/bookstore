@@ -1,0 +1,66 @@
+<!-- TOAST -->
+<p-toast position="top-right"></p-toast>
+
+<!-- HEADER -->
+<p-toolbar>
+
+  <div class="flex align-items-center gap-2">
+
+    <button
+      pButton
+      icon="pi pi-bars"
+      class="p-button-text"
+      (click)="sidebarVisible=true">
+    </button>
+
+    <h2>Book Store</h2>
+
+  </div>
+
+  <div class="flex align-items-center gap-2">
+
+    <button
+      pButton
+      icon="pi pi-shopping-cart"
+      class="p-button-text">
+    </button>
+
+    <button
+      pButton
+      icon="pi pi-user"
+      class="p-button-text">
+    </button>
+
+  </div>
+
+</p-toolbar>
+
+<!-- SIDEBAR -->
+<p-drawer
+  [(visible)]="sidebarVisible">
+
+  <h3>Menu</h3>
+
+  <div
+    class="menu-item">
+    @for (item of menus; track $index) {
+    <a
+      [routerLink]="item.route"
+      (click)="sidebarVisible=false">
+
+      <i [class]="item.icon"></i>
+
+      {{item.label}}
+
+    </a>
+}
+  </div>
+
+</p-drawer>
+
+<!-- PAGE CONTENT -->
+<div class="layout-content">
+
+  <router-outlet></router-outlet>
+
+</div>
