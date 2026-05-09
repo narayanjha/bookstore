@@ -3,13 +3,8 @@ import { ApiService } from '../../../core/services/api.service';
 import { Router, RouterLink } from '@angular/router';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 
-import { CardModule } from 'primeng/card';
-import { InputTextModule } from 'primeng/inputtext';
-import { PasswordModule } from 'primeng/password';
-import { ButtonModule } from 'primeng/button';
-import { ToastModule } from 'primeng/toast';
-
 import { MessageService } from 'primeng/api';
+import { PrimengModule } from '../../../shared/primeng/primeng-module';
 
 @Component({
   selector: 'app-login',
@@ -17,13 +12,8 @@ import { MessageService } from 'primeng/api';
   imports: [
     ReactiveFormsModule,
     RouterLink,
-    CardModule,
-    InputTextModule,
-    PasswordModule,
-    ButtonModule,
-    ToastModule
+    PrimengModule
   ],
-  providers: [MessageService],
   templateUrl: './login.html',
   styleUrl: './login.scss',
 })

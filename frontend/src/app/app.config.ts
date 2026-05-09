@@ -2,6 +2,7 @@ import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/
 import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeuix/themes/aura';
 import { provideRouter } from '@angular/router';
+import { MessageService } from 'primeng/api';
 
 import { routes } from './app.routes';
 
@@ -13,6 +14,7 @@ export const appConfig: ApplicationConfig = {
                 preset: Aura
             }
         }),
-    provideRouter(routes)
+    provideRouter(routes),
+    MessageService
   ]
 };

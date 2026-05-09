@@ -7,14 +7,9 @@ import {
 
 import { Router, RouterLink } from '@angular/router';
 
-import { CardModule } from 'primeng/card';
-import { InputTextModule } from 'primeng/inputtext';
-import { PasswordModule } from 'primeng/password';
-import { ButtonModule } from 'primeng/button';
-import { ToastModule } from 'primeng/toast';
-
 import { MessageService } from 'primeng/api';
 import { ApiService } from '../../../core/services/api.service';
+import { PrimengModule } from '../../../shared/primeng/primeng-module';
 
 @Component({
   standalone: true,
@@ -22,13 +17,8 @@ import { ApiService } from '../../../core/services/api.service';
   imports: [
     ReactiveFormsModule,
     RouterLink,
-    CardModule,
-    InputTextModule,
-    PasswordModule,
-    ButtonModule,
-    ToastModule
+    PrimengModule
   ],
-  providers: [MessageService],
   templateUrl: './register.html',
   styleUrl: './register.scss',
 })
