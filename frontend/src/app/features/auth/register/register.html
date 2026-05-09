@@ -1,0 +1,115 @@
+<p-toast></p-toast>
+
+<div class="register-page">
+
+  <p-card header="Create Account" styleClass="register-card">
+
+    <form
+      [formGroup]="form"
+      (ngSubmit)="register()">
+
+      <!-- Name -->
+      <div class="field mb-3">
+
+        <label>Full Name</label>
+
+        <input
+          pInputText
+          type="text"
+          formControlName="name"
+          class="w-full"
+        />
+
+        @if (f.name.touched && f.name.invalid) {
+          <small class="p-error">
+            Name is required
+          </small>
+        }
+
+      </div>
+
+      <!-- Email -->
+      <div class="field mb-3">
+
+        <label>Email</label>
+
+        <input
+          pInputText
+          type="email"
+          formControlName="email"
+          class="w-full"
+        />
+
+        @if (f.email.touched && f.email.invalid) {
+          <small class="p-error">
+            Valid email required
+          </small>
+        }
+
+      </div>
+
+      <!-- Mobile -->
+      <!-- <div class="field mb-3">
+
+        <label>Mobile</label>
+
+        <input
+          pInputText
+          type="text"
+          formControlName="mobile"
+          class="w-full"
+        />
+
+      </div> -->
+
+      <!-- Password -->
+      <div class="field mb-3">
+
+        <label>Password</label>
+
+        <p-password
+          formControlName="password"
+          [toggleMask]="true"
+          styleClass="w-full">
+        </p-password>
+
+      </div>
+
+      <!-- Confirm Password -->
+      <!-- <div class="field mb-3">
+
+        <label>Confirm Password</label>
+
+        <p-password
+          formControlName="confirmPassword"
+          [toggleMask]="true"
+          styleClass="w-full">
+        </p-password>
+
+      </div> -->
+
+      <!-- Button -->
+      <button
+        pButton
+        type="submit"
+        label="Register"
+        [loading]="loading"
+        class="w-full">
+      </button>
+
+      <!-- Login -->
+      <div class="text-center mt-3">
+
+        Already have account?
+
+        <a routerLink="/login">
+          Login
+        </a>
+
+      </div>
+
+    </form>
+
+  </p-card>
+
+</div>

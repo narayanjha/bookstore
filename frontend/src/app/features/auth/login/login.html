@@ -1,0 +1,40 @@
+<div class="flex justify-content-center align-items-center min-h-screen">
+
+  <p-card header="Login" styleClass="w-25rem">
+
+    <form [formGroup]="form" (ngSubmit)="login()">
+
+      <div class="field mb-3">
+        <label>Email</label>
+
+        <input
+          pInputText
+          type="email"
+          formControlName="email"
+          class="w-full"
+        />
+      </div>
+
+      <div class="field mb-3">
+        <label>Password</label>
+
+        <input
+          pInputText
+          type="password"
+          formControlName="password"
+          class="w-full"
+        />
+      </div>
+
+      <button
+        pButton
+        type="submit"
+        label="Login"
+        class="w-full">
+      </button>
+
+    </form>
+
+  </p-card>
+
+</div>
