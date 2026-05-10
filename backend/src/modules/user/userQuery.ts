@@ -21,3 +21,15 @@ SET
 WHERE id = $6
 RETURNING *
 `;
+
+export const GET_PASSWORD_BY_ID = `
+SELECT password
+FROM users
+WHERE id = $1
+`;
+
+export const UPDATE_PASSWORD = `
+UPDATE users
+SET password = $1
+WHERE id = $2
+`;

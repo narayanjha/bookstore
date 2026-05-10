@@ -1,9 +1,11 @@
 import { Request, Response } from "express";
-
+import bcrypt from "bcryptjs";
 import {pool} from "../../config/db.ts";
 
 import {
+  GET_PASSWORD_BY_ID,
   GET_USER_BY_ID,
+  UPDATE_PASSWORD,
   UPDATE_USER
 } from "./userQuery";
 
@@ -52,11 +54,7 @@ async (
 
 
 // UPDATE USER
-export const updateUser =
-async (
-  req: Request,
-  res: Response
-) => {
+export const updateUser = async (req: Request,res: Response) => {
 
   try {
 
@@ -113,6 +111,74 @@ async (
       message:
         "Profile updated successfully",
       user: result.rows[0]
+    });
+
+  } catch (error) {
+
+    console.log(error);
+
+    res.status(500).json({
+      message: "Server error"
+    });
+
+  }
+
+};
+
+// CHANGE PASSWORD
+export const changePassword =async (req: Request,res: Response) => {
+
+  try {
+
+    const { id } = req.params;
+    const { oldPassword,newPassword} = req.body;
+
+    // VALIDATION
+    if (!oldPassword ||!newPassword) {
+
+      return res.status(400)
+      .json({
+        message:
+          "All fields are required"
+      });
+
+    }
+
+    // GET USER PASSWORD
+    const userResult = await pool.query(GET_PASSWORD_BY_ID,[id]
+      );
+
+    if (userResult.rows.length === 0) {
+      return res.status(404)
+      .json({
+        message: "User not found"
+      });
+
+    }
+
+    const user = userResult.rows[0];
+
+    // VERIFY OLD PASSWORD
+    const isMatch = await bcrypt.compare(oldPassword,user.password);
+
+    if (!isMatch) {
+      return res.status(400)
+      .json({
+        message:
+          "Old password incorrect"
+      });
+
+    }
+
+    // HASH NEW PASSWORD
+    const hashedPassword = await bcrypt.hash(newPassword,10);
+
+    // UPDATE PASSWORD
+    await pool.query(UPDATE_PASSWORD,[hashedPassword,id]);
+
+    res.json({
+      message:
+        "Password changed successfully"
     });
 
   } catch (error) {

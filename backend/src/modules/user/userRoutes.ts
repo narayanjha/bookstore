@@ -1,5 +1,5 @@
 import { Router, Request, Response, NextFunction } from "express";
-import {getUser,updateUser} from "./userController";
+import {changePassword, getUser,updateUser} from "./userController";
 import {upload} from "../../shared/middleware/upload.ts";
 
 const router = Router();
@@ -19,8 +19,10 @@ const handleOptionalUpload = (req: Request, res: Response, next: NextFunction) =
 // GET USER
 router.get("/:id", getUser);
 
-
 // UPDATE USER
 router.put("/:id",handleOptionalUpload,updateUser);
+
+// CHANGE PASSWORD
+router.put("/changepassword/:id",changePassword);
 
 export default router;
