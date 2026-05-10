@@ -3,6 +3,7 @@ import cors from "cors";
 import authRoutes from "./modules/auth/routes/authRoute.ts";
 import productRoutes from "./modules/product/route/productRoute.ts";
 import orderRoutes from "./modules/order/route/orderRoute.ts";
+import userRoutes from "./modules/user/userRoutes.ts";
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use("/assets/images", express.static("public/assets/images"));
 app.use("/api/auth", authRoutes);
 app.use("/api/product", productRoutes);
 app.use("/api/cart", orderRoutes);
+app.use("/api/user", userRoutes);
 
 app.get("/", (req, res) => {
   res.send("API Running 🚀");
