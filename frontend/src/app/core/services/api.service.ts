@@ -41,7 +41,7 @@ export class ApiService {
   // GET PROFILE
   getProfile(userId: string) {
     return this.http.get(
-      `${this.baseUrl}/users/${userId}`
+      `${this.baseUrl}/user/${userId}`
     );
   }
 
@@ -51,7 +51,7 @@ export class ApiService {
     data: any
   ) {
     return this.http.put(
-      `${this.baseUrl}/users/${userId}`,
+      `${this.baseUrl}/user/${userId}`,
       data
     );
   }

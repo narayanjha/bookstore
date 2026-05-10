@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { ApiService } from '../../../core/services/api.service';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 
 import { MessageService } from 'primeng/api';
@@ -11,7 +11,6 @@ import { PrimengModule } from '../../../shared/primeng/primeng-module';
   standalone: true,
   imports: [
     ReactiveFormsModule,
-    RouterLink,
     PrimengModule
   ],
   templateUrl: './login.html',
